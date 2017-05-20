@@ -85,6 +85,7 @@ class TestPostModel(TestCase):
 
         # 변경 사항을 체크 할 수 있음.
         # 뭔가 좀 변한거 같지 않나요?
+        # 리턴값을 확인 해보세요
         url = reverse('user-detail', args=[1])
         print(url)
         response = self.client.get(url, format='json')
@@ -105,3 +106,4 @@ class TestPostModel(TestCase):
         print(response.content)
         # Booom!  성공!
         assert response.status_code == status.HTTP_404_NOT_FOUND, f"{response.content}"
+
