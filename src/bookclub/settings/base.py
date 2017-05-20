@@ -42,11 +42,11 @@ OPTIONAL_APPS = [
     'oauth2_provider',
 ]
 
-PROJECTS_APP = [
+MY_APP = [
     'posts',
 ]
 
-INSTALLED_APPS = PRE_INSTALLED_APPS + OPTIONAL_APPS + PROJECTS_APP
+INSTALLED_APPS = PRE_INSTALLED_APPS + OPTIONAL_APPS + MY_APP
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
