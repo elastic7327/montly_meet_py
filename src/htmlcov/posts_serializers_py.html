@@ -79,6 +79,11 @@
 <p id="n10" class="stm run hide_run"><a href="#n10">10</a></p>
 <p id="n11" class="stm run hide_run"><a href="#n11">11</a></p>
 <p id="n12" class="stm run hide_run"><a href="#n12">12</a></p>
+<p id="n13" class="pln"><a href="#n13">13</a></p>
+<p id="n14" class="pln"><a href="#n14">14</a></p>
+<p id="n15" class="pln"><a href="#n15">15</a></p>
+<p id="n16" class="pln"><a href="#n16">16</a></p>
+<p id="n17" class="pln"><a href="#n17">17</a></p>
 
             </td>
             <td class="text">
@@ -86,14 +91,19 @@
 <p id="t2" class="pln"><span class="com"># -*- coding: utf-8 -*-</span><span class="strut">&nbsp;</span></p>
 <p id="t3" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t4" class="stm run hide_run"><span class="key">from</span> <span class="nam">rest_framework</span> <span class="key">import</span> <span class="nam">serializers</span><span class="strut">&nbsp;</span></p>
-<p id="t5" class="stm run hide_run"><span class="key">from</span> <span class="nam">posts</span><span class="op">.</span><span class="nam">models</span> <span class="key">import</span> <span class="nam">ExtendUser</span><span class="strut">&nbsp;</span></p>
+<p id="t5" class="stm run hide_run"><span class="key">from</span> <span class="nam">django</span><span class="op">.</span><span class="nam">contrib</span><span class="op">.</span><span class="nam">auth</span><span class="op">.</span><span class="nam">models</span> <span class="key">import</span> <span class="nam">User</span><span class="strut">&nbsp;</span></p>
 <p id="t6" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t7" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t8" class="stm run hide_run"><span class="key">class</span> <span class="nam">ExtendUserSerializer</span><span class="op">(</span><span class="nam">serializers</span><span class="op">.</span><span class="nam">ModelSerializer</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t8" class="stm run hide_run"><span class="key">class</span> <span class="nam">UserSerializer</span><span class="op">(</span><span class="nam">serializers</span><span class="op">.</span><span class="nam">ModelSerializer</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t9" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t10" class="stm run hide_run">    <span class="key">class</span> <span class="nam">Meta</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t11" class="stm run hide_run">        <span class="nam">model</span> <span class="op">=</span> <span class="nam">ExtendUser</span><span class="strut">&nbsp;</span></p>
-<p id="t12" class="stm run hide_run">        <span class="nam">fields</span> <span class="op">=</span> <span class="op">(</span><span class="str">'user'</span><span class="op">,</span> <span class="str">'mobile'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t11" class="stm run hide_run">        <span class="nam">model</span> <span class="op">=</span> <span class="nam">User</span><span class="strut">&nbsp;</span></p>
+<p id="t12" class="stm run hide_run">        <span class="nam">fields</span> <span class="op">=</span> <span class="op">(</span><span class="strut">&nbsp;</span></p>
+<p id="t13" class="pln">                <span class="str">'username'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t14" class="pln">                <span class="str">'password'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t15" class="pln">                <span class="str">'email'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t16" class="pln">                <span class="str">'is_active'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t17" class="pln">        <span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -104,7 +114,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-05-19 17:12
+            created at 2017-05-20 03:23
         </p>
     </div>
 </div>

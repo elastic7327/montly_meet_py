@@ -2,11 +2,16 @@
 # -*- coding: utf-8 -*-
 
 from rest_framework import serializers
-from posts.models import ExtendUser
+from django.contrib.auth.models import User
 
 
-class ExtendUserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = ExtendUser
-        fields = ('user', 'mobile')
+        model = User
+        fields = (
+                'username',
+                'password',
+                'email',
+                'is_active',
+        )
