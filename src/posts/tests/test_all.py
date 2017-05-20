@@ -69,22 +69,39 @@ class TestPostModel(TestCase):
                 'username': 'AWESOME_DIBIUP_TEAMS',
                 'password': 'DIBIUP IPO GOGOGO',
                 'email': 'dibiup@gmail.com',
-                'is_active': False 
+                'is_active': False
         }
         print(url)
 
-        # PYTHON 3.6.1 부터 조금 이상해짐 쓸대없이.. 덤프해서 넘기고 그래야함 ..
+        # PYTHON 3.6.1 부터 조금 이상해짐 쓸대없이.. 덤프해서 넘기고 그래야함.
+        # 유져 pk 값이 1인 대상의 자료값을 바꿔준다.
         response = self.client.patch(
                 url,
                 data=json.dumps(data),
                 content_type='application/json'
         )
         print(response.content)
-        # ?
         assert response.status_code == status.HTTP_200_OK, f"{response.content}"
 
+        # 변경 사항을 체크 할 수 있음.
+        # 뭔가 좀 변한거 같지 않나요?
         url = reverse('user-detail', args=[1])
         print(url)
         response = self.client.get(url, format='json')
         print(response.content)
         assert response.status_code == status.HTTP_200_OK, f"{response.content}"
+
+        # 그럼 한번 지워볼까요?
+        url = reverse('user-detail', args=[1])
+        print(url)
+        response = self.client.delete(url, format='json')
+        print(response.content)
+        assert response.status_code == status.HTTP_204_NO_CONTENT, f"{response.content}"
+
+        # 확실하게 날려버렸나 다시 한번 확인해 볼까요? 
+        url = reverse('user-detail', args=[1])
+        print(url)
+        response = self.client.get(url, format='json')
+        print(response.content)
+        # Booom!  성공!
+        assert response.status_code == status.HTTP_404_NOT_FOUND, f"{response.content}"
