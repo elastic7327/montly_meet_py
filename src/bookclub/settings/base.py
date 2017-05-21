@@ -48,6 +48,21 @@ MY_APP = [
 
 INSTALLED_APPS = PRE_INSTALLED_APPS + OPTIONAL_APPS + MY_APP
 
+
+REST_FRAMEWORK = {
+        'DEFAULT_AUTHENTICATION_CLASSES': (
+                'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+            )
+        }
+
+
+OAUTH2_PROVIDER = {
+    'SCOPES': {
+        'read': 'Read scope',
+        'write': 'Write scope',
+        'groups': 'Access to your groups'},
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
