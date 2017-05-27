@@ -40,7 +40,7 @@ PRE_INSTALLED_APPS = [
 OPTIONAL_APPS = [
     # 잠깐 ... rest_framework
     # 플러그인을 앱에 등록하지 않았는데
-    # 테스트를 할 수있다는 신기함 . . .
+    # 테스트를 할 수있다는 신선함!
     'rest_framework',
     'django_extensions',
     'oauth2_provider',

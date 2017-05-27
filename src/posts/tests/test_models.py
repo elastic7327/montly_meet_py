@@ -23,8 +23,7 @@ Application = get_application_model()
 
 
 class TestPostModel(TestPostsBase):
-
-    @pytest.mark.skip(reason="skip it for a moment")
+    # @pytest.mark.skip(reason="skip it for a moment")
     def test_create_users_with_mixer(self):
         # 좋은 방법은 아닙니다.
         for cnt in range(100):
